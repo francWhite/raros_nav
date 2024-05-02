@@ -6,7 +6,7 @@
       <paths name="pi@eee-03300">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/pi/dev_raros/ros2" local="$PROJECT_DIR$" />
+            <mapping deploy="/home/pi/dev_raros/raros_nav" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/build" />
