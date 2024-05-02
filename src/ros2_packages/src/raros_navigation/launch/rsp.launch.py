@@ -1,13 +1,12 @@
 import os
 
-from ament_index_python.packages import get_package_share_directory
-
-from launch import LaunchDescription
-from launch.substitutions import LaunchConfiguration, Command
-from launch.actions import DeclareLaunchArgument
-from launch_ros.actions import Node
-
 import xacro
+from ament_index_python.packages import get_package_share_directory
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.conditions import UnlessCondition
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
 
 
 def generate_launch_description():
@@ -17,7 +16,6 @@ def generate_launch_description():
     xacro_file = os.path.join(description_path, 'robot.urdf.xacro')
     robot_description_config = xacro.process_file(xacro_file)
 
-    # Create a robot_state_publisher node
     node_robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
@@ -42,7 +40,8 @@ def generate_launch_description():
             'angle_compensate': True,
             'scan_mode': 'Standard',
             'serial_baudrate': 115200,
-        }]
+        }],
+        condition=UnlessCondition(LaunchConfiguration('use_sim_time'))
     )
 
     return LaunchDescription([
