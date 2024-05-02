@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file:///opt/ros/humble/local/lib/python3.10/dist-packages">
+        <entryData>
+          <resourceRoots>
+            <path value="file:///opt/ros/humble/lib/python3.10/site-packages" />
+            <path value="file:///opt/ros/humble/local/lib/python3.10/dist-packages" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>
