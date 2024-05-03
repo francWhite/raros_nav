@@ -23,7 +23,12 @@ ___
    ros2 launch raros_navigation display.launch.py
     ```
    
-6. run teleop
+6. run SLAM
+    ```bash
+   ros2 launch raros_navigation slam.launch.py
+    ```
+   
+7. run teleop
     ```bash
    ros2 run teleop_twist_keyboard teleop_twist_keyboard
     ```
